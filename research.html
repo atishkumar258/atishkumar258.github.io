@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Name | Research</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Your Name</h1>
+      <p class="tagline">PhD candidate in Economics, University of X</p>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="research.html" class="active">Research</a>
+        <a href="teaching.html">Teaching</a>
+        <a href="cv.html">CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Job market paper</h2>
+      <article>
+        <h3>Title of your job market paper</h3>
+        <p class="meta">Working paper</p>
+        <p>
+          One sentence explaining the question you ask.
+          One or two sentences on your method.
+          One sentence on your main result.
+        </p>
+        <p>
+          <a href="papers/jmp.pdf">PDF</a> ·
+          <a href="papers/jmp_slides.pdf">Slides</a> ·
+          <a href="https://github.com/yourusername/jmp-code">Code</a>
+        </p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Working papers</h2>
+      <article>
+        <h3>Paper title 1</h3>
+        <p class="meta">With Coauthor A and Coauthor B</p>
+        <p>Short abstract-style description, in 3 to 4 sentences.</p>
+        <p><a href="papers/paper1.pdf">PDF</a></p>
+      </article>
+
+      <article>
+        <h3>Paper title 2</h3>
+        <p class="meta">Solo-authored</p>
+        <p>Short description.</p>
+        <p><a href="papers/paper2.pdf">PDF</a></p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Work in progress</h2>
+      <ul>
+        <li>Project title 1 brief description.</li>
+        <li>Project title 2 brief description.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Your Name</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
