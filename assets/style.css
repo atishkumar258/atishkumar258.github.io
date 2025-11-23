@@ -1,13 +1,12 @@
 /* ==== Design tokens ================================================== */
 :root {
-  --bg: #f5f4fb;
+  --bg: #f5f7fb;
   --bg-alt: #ffffff;
-  --accent: #205493;
-  --accent-soft: #e5efff;
+  --accent: #24496b;
+  --accent-soft: #dde7f5;
   --text-main: #1f2933;
   --text-muted: #6b7280;
-  --border-subtle: #e1e4ee;
-  --shadow-soft: 0 10px 24px rgba(15, 23, 42, 0.05);
+  --border-subtle: #dde1eb;
 }
 
 /* ==== Global reset ==================================================== */
@@ -36,15 +35,14 @@ body {
 header {
   background-color: var(--bg-alt);
   border-bottom: 1px solid var(--border-subtle);
-  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.04);
-  padding: 1.6rem 0 1.1rem;
-  margin-bottom: 2.2rem;
+  padding: 1.4rem 0 1rem;
+  margin-bottom: 2rem;
 }
 
 .site-header-top {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.4rem;
 }
 
 @media (min-width: 640px) {
@@ -66,105 +64,147 @@ h1 {
 }
 
 nav {
-  margin-top: 0.9rem;
+  margin-top: 0.6rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
+  gap: 0.5rem;
   font-size: 0.94rem;
 }
 
 nav a {
   text-decoration: none;
   color: var(--accent);
-  padding: 0.25rem 0.7rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  position: relative;
-  transition: background-color 0.16s ease, color 0.16s ease,
-    transform 0.12s ease;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
 
 nav a:hover {
   background-color: var(--accent-soft);
-  transform: translateY(-1px);
 }
 
 nav a.active {
   background-color: var(--accent);
-  color: white;
+  color: #ffffff;
   font-weight: 600;
 }
 
 /* ==== Main layout ===================================================== */
 
 main {
-  padding-bottom: 3.5rem;
+  padding-bottom: 3rem;
 }
 
 section {
-  margin-bottom: 2.6rem;
+  margin-bottom: 2.3rem;
 }
 
 h2 {
   font-size: 1.25rem;
-  margin-bottom: 0.9rem;
-  letter-spacing: 0.04em;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #111827;
 }
 
 .section-underline {
   display: inline-block;
-  width: 48px;
+  width: 42px;
   height: 2px;
   border-radius: 999px;
   background-color: var(--accent);
-  margin-top: 0.2rem;
+  margin-bottom: 0.9rem;
 }
 
 /* Paragraphs & lists */
 p {
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.75rem;
 }
 
 ul {
   margin-left: 1.2rem;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
 
 li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.3rem;
 }
 
-/* ==== Cards for research / teaching items ============================= */
+/* Compact list for sidebar */
+.compact-list {
+  margin-top: 0.3rem;
+  margin-bottom: 0;
+}
 
-article {
-  margin-bottom: 1.2rem;
-  padding: 0.95rem 1.1rem 0.8rem;
+.compact-list li {
+  margin-bottom: 0.25rem;
+}
+
+/* Small label above headings */
+.section-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+
+/* ==== Home layout ===================================================== */
+
+.home-main {
+  margin-top: 0.4rem;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+  gap: 1.5rem;
+  margin-bottom: 1.8rem;
+}
+
+.home-main-card,
+.home-side-card {
   background-color: var(--bg-alt);
   border-radius: 12px;
   border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-soft);
-  position: relative;
-  overflow: hidden;
+  padding: 1.4rem 1.5rem;
 }
 
-article::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: linear-gradient(
-    180deg,
-    var(--accent),
-    #38bdf8
-  );
+/* very light shadow only on large screens */
+@media (min-width: 900px) {
+  .home-main-card,
+  .home-side-card {
+    box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+  }
+}
+
+.home-main-card h2 {
+  margin-bottom: 0.8rem;
+}
+
+.home-side-card p {
+  margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* ==== Generic cards for research / teaching items ===================== */
+
+article {
+  margin-bottom: 1.1rem;
+  padding: 0.9rem 1rem 0.8rem;
+  background-color: var(--bg-alt);
+  border-radius: 10px;
+  border: 1px solid var(--border-subtle);
 }
 
 article h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.15rem;
+  font-size: 1.03rem;
+  margin-bottom: 0.2rem;
 }
 
 .meta {
@@ -183,13 +223,6 @@ article h3 {
   margin-bottom: 0.4rem;
 }
 
-/* On hover, lift the card slightly */
-article:hover {
-  transform: translateY(-2px);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
-}
-
 /* ==== Links =========================================================== */
 
 a {
@@ -197,209 +230,15 @@ a {
 }
 
 a:hover {
-  color: #143a6d;
+  color: #173552;
 }
 
 /* ==== Footer ========================================================== */
 
 footer {
   border-top: 1px solid var(--border-subtle);
-  padding: 1.1rem 0;
+  padding: 1rem 0;
   font-size: 0.85rem;
   color: var(--text-muted);
   background-color: var(--bg-alt);
-}
-
-/* ==== Home hero layout ================================================ */
-
-.home-main {
-  margin-top: 0.6rem;
-}
-
-/* Main hero card */
-.hero {
-  display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.6fr);
-  gap: 2.4rem;
-  align-items: center;
-  padding: 1.9rem 2.1rem;
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at top left, rgba(32, 84, 147, 0.7), transparent 60%),
-    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.5), transparent 55%),
-    #020617;
-  color: #e5e7eb;
-  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.7);
-  margin-bottom: 2.6rem;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.8rem;
-}
-
-/* Avatar with gradient ring */
-.avatar-ring {
-  padding: 3px;
-  border-radius: 999px;
-  background: conic-gradient(from 210deg, #38bdf8, #f97316, #22c55e, #38bdf8);
-}
-
-.avatar {
-  width: 96px;
-  height: 96px;
-  border-radius: 999px;
-  background-color: #020617;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-}
-
-.avatar span {
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.hero-location {
-  font-size: 0.9rem;
-  color: #cbd5f5;
-}
-
-.hero-right {
-  max-width: 560px;
-}
-
-.hero-heading {
-  font-size: 1.5rem;
-  margin-bottom: 0.7rem;
-  color: #e5e7eb;
-}
-
-.hero-text {
-  font-size: 0.98rem;
-  color: #cbd5f5;
-}
-
-/* Tags under hero text */
-.hero-tags {
-  margin: 0.7rem 0 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.45rem;
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.18rem 0.65rem;
-  border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  font-size: 0.75rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-}
-
-/* Buttons in hero */
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  align-items: center;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  text-decoration: none;
-  border: 1px solid transparent;
-  cursor: pointer;
-  transition: background-color 0.15s ease, color 0.15s ease,
-    border-color 0.15s ease, transform 0.12s ease;
-}
-
-.btn-primary {
-  background-color: #e5f0ff;
-  color: #0f172a;
-}
-
-.btn-primary:hover {
-  background-color: #ffffff;
-  border-color: rgba(191, 219, 254, 0.9);
-  transform: translateY(-1px);
-}
-
-.btn-ghost {
-  background-color: transparent;
-  border-color: rgba(148, 163, 184, 0.7);
-  color: #e5e7eb;
-}
-
-.btn-ghost:hover {
-  background-color: rgba(15, 23, 42, 0.7);
-  transform: translateY(-1px);
-}
-
-.hero-email {
-  font-size: 0.85rem;
-  color: #cbd5f5;
-}
-
-/* Below-hero two-column section */
-.home-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 1.8rem;
-  margin-bottom: 2.8rem;
-}
-
-.home-column {
-  padding: 1.1rem 1.2rem 1rem;
-  background-color: #ffffff;
-  border-radius: 14px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
-}
-
-.home-column h3 {
-  font-size: 1.05rem;
-  margin-bottom: 0.5rem;
-}
-
-.home-highlight-title a {
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.home-highlight-text {
-  font-size: 0.92rem;
-}
-
-.home-meta {
-  font-size: 0.82rem;
-  color: var(--text-muted);
-}
-
-/* Responsive behaviour */
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: minmax(0, 1fr);
-    padding: 1.6rem 1.5rem;
-  }
-  .hero-right {
-    max-width: none;
-  }
-  .home-columns {
-    grid-template-columns: minmax(0, 1fr);
-  }
 }
