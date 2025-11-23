@@ -2,62 +2,108 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Your Name | Economics PhD</title>
+  <title>Atish Kumar | Economics PhD</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/style.css?v=2">
+  <!-- bump the version if you change CSS again -->
+  <link rel="stylesheet" href="assets/style.css?v=3">
 </head>
 <body>
   <header>
     <div class="container">
-      <h1>Your Name</h1>
-      <p class="tagline">PhD candidate in Economics, University of X</p>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html">Research</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="cv.html">CV</a>
-      </nav>
+      <div class="site-header-top">
+        <div>
+          <h1>Atish Kumar</h1>
+          <p class="tagline">PhD candidate in Economics, IIIT Delhi</p>
+        </div>
+        <nav>
+          <a href="index.html" class="active">Home</a>
+          <a href="research.html">Research</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="cv.html">CV</a>
+        </nav>
+      </div>
     </div>
   </header>
 
-    <main class="container">
-      <section>
-        <h2>About</h2>
-        <p>
-          I am a PhD candidate in Economics at the University of X. 
-          My research focuses on nonparametric statistics, econometrics, and macroeconomic applications.
-          I am particularly interested in problems where flexible methods help uncover structure in complex data.
-        </p>
-      </section>
+  <main class="container home-main">
 
-      <section>
-        <h2>Research interests</h2>
-        <ul>
-          <li>Nonparametric and semiparametric econometrics</li>
-          <li>Macroeconomics and inequality</li>
-          <li>Machine learning in empirical economics</li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Contacts and links</h2>
-        <p>Email: <a href="mailto:you@university.ac.uk">you@university.ac.uk</a></p>
-        <p>
-          <a href="cv.html">CV</a> ·
-          <a href="https://scholar.google.com/">Google Scholar</a> ·
-          <a href="https://github.com/yourusername">GitHub</a>
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      <div class="container">
-        <p>&copy; <span id="year"></span> Your Name</p>
+    <!-- Hero card -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="avatar-ring">
+          <!-- you can swap this for an <img> later -->
+          <div class="avatar">
+            <span>AK</span>
+          </div>
+        </div>
+        <p class="hero-location">Economics · IIIT Delhi · SCDLDS</p>
       </div>
-    </footer>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+      <div class="hero-right">
+        <h2 class="hero-heading">
+          Computational economics and finance, with applications to macro and climate.
+        </h2>
+        <p class="hero-text">
+          I am a PhD candidate in Economics at IIIT Delhi and a Visiting Scholar at the
+          Safexpress Centre for Data Learning and Decision Sciences (SCDLDS), working under
+          the supervision of Prof. Sandeep Juneja. My research focuses on computational
+          economics and finance, with an emphasis on developing and applying machine learning
+          techniques to economic data. I am currently working on empirical finance,
+          macroeconomic modelling, and climate modelling for policy evaluation.
+        </p>
+
+        <div class="hero-tags">
+          <span class="chip">Empirical macro & finance</span>
+          <span class="chip">Machine learning</span>
+          <span class="chip">Climate risk & policy</span>
+        </div>
+
+        <div class="hero-actions">
+          <a href="cv.html" class="btn btn-primary">View CV</a>
+          <a href="research.html" class="btn btn-ghost">View research</a>
+          <a href="mailto:atishk@iiitd.ac.in" class="hero-email">atishk@iiitd.ac.in</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Below-hero content -->
+    <section class="home-columns">
+      <div class="home-column">
+        <h3>Research interests</h3>
+        <ul>
+          <li><strong>Empirical macroeconomics and finance</strong> with a focus on
+              asset pricing, macro–finance linkages, and business cycle dynamics.</li>
+          <li><strong>Machine learning</strong> for economic data, including
+              nonparametric and model-based approaches.</li>
+          <li><strong>AI in climate modelling</strong> for evaluating climate risks
+              and policy interventions.</li>
+        </ul>
+      </div>
+
+      <div class="home-column">
+        <h3>Background</h3>
+        <p class="home-highlight-text">
+          Prior to my PhD, I worked as a Senior Risk Analyst at the Hong Kong and
+          Shanghai Banking Corporation (HSBC) in India. This experience informs my
+          current work on financial risk, macroeconomic uncertainty, and climate-related
+          stress testing.
+        </p>
+        <p class="home-meta">
+          Senior Risk Analyst · HSBC India · pre-PhD experience
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Atish Kumar</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
