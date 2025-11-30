@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CV | Atish Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css?v=12">
+</head>
+
+<body class="bg-soft">
+
+  <header>
+    <div class="container">
+      <div class="site-header-top">
+        <div>
+          <span class="header-name">Atish Kumar</span>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="cv.html" class="active">CV</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    
+    <div class="paper-card" style="text-align: center; margin-top: 2rem; padding: 4rem 2rem;">
+      <p style="font-size: 1.3rem; color: #333;">
+        Click to download my <a href="assets/CV.pdf" target="_blank" style="font-weight: 700;">CV</a>.
+      </p>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Atish Kumar</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
