@@ -1,12 +1,12 @@
-/* ==== Design tokens: simple, academic ================================= */
+/* ==== Design tokens: clean, minimal academic ========================= */
 :root {
   --bg: #ffffff;
   --bg-alt: #ffffff;
-  --accent: #204a73;        /* muted blue */
-  --accent-soft: #e1e9f4;
-  --text-main: #142033;
-  --text-muted: #616775;
-  --border-subtle: #e1e4ec;
+  --accent: #1f4c85;      /* deep muted blue for links and headings */
+  --accent-soft: #dfe7f4; /* very light blue underline/border */
+  --text-main: #102030;   /* dark blue-grey for main text */
+  --text-muted: #6b7280;  /* for tagline etc. */
+  --border-subtle: #e1e4ee;
 }
 
 /* ==== Global reset ==================================================== */
@@ -25,7 +25,7 @@ body {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 840px;
   padding: 0 1.5rem;
   margin: 0 auto;
 }
@@ -68,7 +68,7 @@ nav {
   margin-top: 0.6rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: 0.7rem;
   font-size: 0.94rem;
 }
 
@@ -101,8 +101,8 @@ section {
 
 h2 {
   font-family: "Lora", "Georgia", "Times New Roman", serif;
-  font-size: 1.25rem;
-  margin-bottom: 0.4rem;
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   color: #111827;
@@ -110,10 +110,10 @@ h2 {
 
 .section-underline {
   display: inline-block;
-  width: 42px;
+  width: 40px;
   height: 2px;
   border-radius: 999px;
-  background-color: var(--accent);
+  background-color: var(--accent-soft);
   margin-bottom: 0.9rem;
 }
 
@@ -144,36 +144,61 @@ li {
   margin-bottom: 0;
 }
 
-/* ==== Home layout: flatten to single column ========================== */
+/* ==== Profile layout: photo + contact on left, text on right ========= */
 
-/* If your index.html still uses .home-intro / .home-primary / .home-secondary,
-   this will make it look like the reference site: one column of text,
-   with "Contact" and interests simply stacked beneath "About". */
+.profile {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.7fr);
+  column-gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2.2rem;
+}
 
-.home-intro {
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.photo-wrapper {
+  max-width: 220px;
+}
+
+.profile-photo {
+  width: 100%;
   display: block;
-  margin-bottom: 2rem;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  object-fit: cover;
 }
 
-.home-primary,
-.home-secondary {
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
-  padding: 0;
+/* If you have no photo yet, the border will still define the space */
+.profile-photo[src=""] {
+  background-color: #f3f4f8;
 }
 
-.home-primary h2 {
-  margin-bottom: 0.8rem;
+.profile-contact h2 {
+  margin-bottom: 0.3rem;
 }
 
-.home-secondary {
-  margin-top: 1.4rem;
+.profile-right h2 {
+  margin-top: 0.3rem;
+}
+
+/* Stack columns on small screens */
+@media (max-width: 768px) {
+  .profile {
+    grid-template-columns: minmax(0, 1fr);
+    row-gap: 1.8rem;
+  }
+  .photo-wrapper {
+    max-width: 240px;
+  }
 }
 
 /* ==== Generic layout on other pages ================================== */
 
-/* Research / teaching entries as simple text blocks, no cards. */
+/* Research / teaching entries as simple stacked text blocks. */
 article {
   margin-bottom: 1.2rem;
   padding: 0;
@@ -211,7 +236,7 @@ a {
 }
 
 a:hover {
-  color: #16385a;
+  color: #163a63;
 }
 
 /* ==== Footer ========================================================== */
