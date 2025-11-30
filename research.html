@@ -2,77 +2,122 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Atish Kumar | Research</title>
+  <title>Research | Atish Kumar</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="assets/style.css?v=5">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css?v=9">
 </head>
-<body>
+<body class="bg-soft"> 
+
   <header>
     <div class="container">
-      <h1>Atish Kumar</h1>
-      <p class="tagline">PhD candidate in Economics, IIIT Delhi</p>
-      <nav>
-        <a href="index.html">Home</a>
-        <a href="research.html" class="active">Research</a>
-        <a href="teaching.html">Teaching</a>
-        <a href="cv.html">CV</a>
-      </nav>
+      <div class="site-header-top">
+        <div>
+          <span class="header-name">Atish Kumar</span>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="research.html" class="active">Research</a>
+          <a href="teaching.html">Teaching</a>
+          <a href="cv.html">CV</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <main class="container">
-    <section>
-      <h2>Job market paper</h2>
-      <article>
-        <h3>Quantifying Economic Damages from Climate Change Using Conditional Diffusion-Based Projections</h3>
-        <p class="meta"> with Sandeep Juneja, Manmeet Singh, Dhruman Gupta</p>
-        <p>
-            This paper develops a conditional diffusion
-            modeling framework to produce probabilistic projections of
-            climate variables that are consistent with both historical
-            observations and future scenarios from empircally validated climate
-            models for India. Using these projections, we estimate the economic
-            damages from climate change for India under various emission
-            scenarios. 
-        </p>
-        <p>
-          <a href="papers/jmp.pdf">PDF</a> ·
-          <a href="papers/jmp_slides.pdf">Slides</a> ·
-          <a href="https://github.com/yourusername/jmp-code">Code</a>
-        </p>
-      </article>
-    </section>
 
-    <section>
-      <h2>Working papers</h2>
-      <article>
-        <h3>Market Power and Core Inflation: Evidence from India</h3>
-        <p class="meta">With Kiriti Kanjilal</p>
-        <p>Firm pricing behavior can have major macroeconomic implications, including high inflation. We leverage firm-level balance sheets and granular core inflation data to study the relationship between profitability metrics such as markup and market power of firms and core inflation in India. We map each firm to the sectoral core inflation component. We don't find any evidence of firm market power in amplifying core inflation. We do, however, observe a negative relationship between markups and core inflation, which echoes the theoretical relationship in the New Keynesian Literature. This study explores several other relationships involving markups, which have significant macroeconomic implications.</p>
-        <p><a href="papers/paper1.pdf">PDF</a></p>
-      </article>
+    <section class="research-section">
+      <h2 class="section-heading">Job Market Paper</h2>
+      <div class="section-underline"></div>
 
-      <article>
-        <h3>Anomaly Boosting: A deep learning approach</h3>
-        <p class="meta">with Sandeep Juneja, Nagpurnanand Prabhala, Aman Foujdar, Sidharth Wagle</p>
-        <p>The explanatory power of Fama-French factors in capturing stock returns variation is well established in the literature. Furthermore, recent advances in deep learning techniques for time-series forecasting have outperformed regression-based models on a variety of datasets. 
-    In this paper, we construct factors related to Indian equity markets leveraging annual firm balance-sheet and daily stock level data. In addition, we propose a novel approach to portfolio optimization by training a deep learning model using Fama-French factors. We select the top 300 firms on the basis of market capitalization and build a long-short trading strategy where the portfolio is rebalanced every month. Our trading strategy generates an economically significant alpha and is easily implementable in practice. </p>
-        <p><a href="papers/paper2.pdf">PDF</a></p>
-      </article>
-    </section>
-
-    <section>
-      <h2>Industry Projects</h2>
-      <ul>
-        <li>Real-time financial crime detection using Machine Learning. Developed an LSTM-Autoencoder to detect anomalous transactions in real-time.Combined the anomaly score with profile and other transaction-level features to arrive at risk probabilities using XGBoost.</li>
+      <article class="paper-card">
+        <h3 class="paper-title">Quantifying Economic Damages from Climate Change Using Conditional Diffusion-Based Projections</h3>
         
-      </ul>
+        <p class="paper-meta">
+            with Sandeep Juneja, Manmeet Singh, Dhruman Gupta
+        </p>
+        
+        <p>
+            This paper develops a conditional diffusion modeling framework to produce probabilistic 
+            projections of climate variables that are consistent with both historical observations 
+            and future scenarios from empirically validated climate models for India. Using these 
+            projections, we estimate the economic damages from climate change for India under 
+            various emission scenarios.
+        </p>
+
+        <div class="paper-links" style="margin-top: 1rem;">
+          <a href="papers/jmp.pdf" class="btn-abstract">PDF</a> &nbsp;
+          <a href="papers/jmp_slides.pdf">Slides</a> &nbsp; / &nbsp;
+          <a href="https://github.com/yourusername/jmp-code">Code</a>
+        </div>
+      </article>
     </section>
+
+
+    <section class="research-section">
+      <h2 class="section-heading">Working Papers</h2>
+      <div class="section-underline"></div>
+
+      <article class="paper-card">
+        <h3 class="paper-title">Market Power and Core Inflation: Evidence from India</h3>
+        <p class="paper-meta">with Kiriti Kanjilal</p>
+        
+        <p>
+            Firm pricing behavior can have major macroeconomic implications, including high inflation. 
+            We leverage firm-level balance sheets and granular core inflation data to study the 
+            relationship between profitability metrics such as markup and market power of firms and 
+            core inflation in India. We observe a negative relationship between markups and core 
+            inflation, which echoes the theoretical relationship in the New Keynesian Literature.
+        </p>
+        
+        <div style="margin-top: 1rem;">
+            <a href="papers/paper1.pdf" class="btn-abstract">PDF</a>
+        </div>
+      </article>
+
+      <article class="paper-card">
+        <h3 class="paper-title">Anomaly Boosting: A Deep Learning Approach</h3>
+        <p class="paper-meta">with Sandeep Juneja, Nagpurnanand Prabhala, Aman Foujdar, Sidharth Wagle</p>
+        
+        <p>
+            We construct factors related to Indian equity markets leveraging annual firm balance-sheet 
+            and daily stock level data. In addition, we propose a novel approach to portfolio 
+            optimization by training a deep learning model using Fama-French factors. Our trading 
+            strategy generates an economically significant alpha and is easily implementable in practice.
+        </p>
+        
+        <div style="margin-top: 1rem;">
+            <a href="papers/paper2.pdf" class="btn-abstract">PDF</a>
+        </div>
+      </article>
+    </section>
+
+
+    <section class="research-section">
+      <h2 class="section-heading">Industry Projects</h2>
+      <div class="section-underline"></div>
+
+      <article class="paper-card">
+        <h3 class="paper-title" style="font-size: 1.1rem;">Real-time financial crime detection using Machine Learning</h3>
+        
+        <p style="margin-top: 0.5rem;">
+            Developed an LSTM-Autoencoder to detect anomalous transactions in real-time. 
+            Combined the anomaly score with profile and other transaction-level features to 
+            arrive at risk probabilities using XGBoost.
+        </p>
+      </article>
+    </section>
+
   </main>
 
   <footer>
     <div class="container">
-      <p>&copy; <span id="year"></span> Your Name</p>
+      <p>&copy; <span id="year"></span> Atish Kumar</p>
     </div>
   </footer>
 
