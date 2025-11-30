@@ -1,12 +1,11 @@
-/* ==== Design tokens: clean, minimal academic ========================= */
+/* ==== Design tokens: Mimicking the reference style =================== */
 :root {
-  --bg: #ffffff;
-  --bg-alt: #ffffff;
-  --accent: #1f4c85;      /* deep muted blue for links and headings */
-  --accent-soft: #dfe7f4; /* very light blue underline/border */
-  --text-main: #102030;   /* dark blue-grey for main text */
-  --text-muted: #6b7280;  /* for tagline etc. */
-  --border-subtle: #e1e4ee;
+  --bg: #ffffff; /* Slightly warmer white if desired, sticking to white for now */
+  --accent: #a9333a;      /* The "Harvard" Maroon/Red from the image */
+  --accent-hover: #822228;
+  --text-main: #333333;   /* Softer black */
+  --text-light: #666666;  /* For titles/subtitles */
+  --border-subtle: #eaeaea;
 }
 
 /* ==== Global reset ==================================================== */
@@ -17,234 +16,198 @@
 }
 
 body {
-  font-family: "Source Sans 3", system-ui, -apple-system, BlinkMacSystemFont,
-    "Segoe UI", sans-serif;
-  line-height: 1.7;
+  font-family: "Source Sans 3", system-ui, -apple-system, sans-serif;
+  font-size: 1.05rem; /* Slightly larger base text */
+  line-height: 1.6;
   background-color: var(--bg);
   color: var(--text-main);
 }
 
 .container {
-  max-width: 840px;
-  padding: 0 1.5rem;
+  max-width: 960px; /* Increased slightly to allow the image to breathe */
+  padding: 0 2rem;
   margin: 0 auto;
 }
 
-/* ==== Header & navigation ============================================ */
-
+/* ==== Header (Kept largely the same, just color tweaks) ============== */
 header {
-  background-color: var(--bg-alt);
-  border-bottom: 1px solid var(--border-subtle);
-  padding: 1.3rem 0 0.9rem;
-  margin-bottom: 1.7rem;
+  background-color: #fff;
+  /* Removed border for a cleaner look, or keep it if preferred */
+  border-bottom: 1px solid var(--border-subtle); 
+  padding: 1.5rem 0;
+  margin-bottom: 3rem;
 }
 
 .site-header-top {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 1rem;
+  align-items: center;
 }
 
 @media (min-width: 640px) {
   .site-header-top {
     flex-direction: row;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: center;
   }
 }
 
-h1 {
-  font-family: "Lora", "Georgia", "Times New Roman", serif;
-  font-size: 2rem;
-  letter-spacing: 0.01em;
-}
-
-.tagline {
-  font-size: 0.96rem;
-  color: var(--text-muted);
+.header-name {
+  font-family: "Lora", serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-main); /* Keep black in header, red in body */
 }
 
 nav {
-  margin-top: 0.6rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  font-size: 0.94rem;
+  gap: 1.5rem;
+  font-size: 1rem;
 }
 
 nav a {
   text-decoration: none;
+  color: var(--text-main);
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+nav a:hover, nav a.active {
   color: var(--accent);
-  padding-bottom: 0.08rem;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.12s ease, color 0.12s ease;
 }
 
-nav a:hover {
-  border-color: var(--accent-soft);
-}
-
-nav a.active {
-  border-color: var(--accent);
-  font-weight: 600;
-}
-
-/* ==== Main layout ===================================================== */
+/* ==== Main Hero Layout =============================================== */
 
 main {
-  padding-bottom: 3rem;
+  padding-bottom: 4rem;
 }
 
-section {
-  margin-bottom: 2.1rem;
+/* The Layout Grid: Image Left, Text Right */
+.hero-grid {
+  display: grid;
+  /* 40% Image, 60% Text - mimicking the wide image in reference */
+  grid-template-columns: 1fr; 
+  gap: 2rem;
+  margin-bottom: 3rem;
+  align-items: start;
 }
 
-h2 {
-  font-family: "Lora", "Georgia", "Times New Roman", serif;
-  font-size: 1.15rem;
-  margin-bottom: 0.35rem;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #111827;
+@media (min-width: 768px) {
+  .hero-grid {
+    grid-template-columns: 0.8fr 1.2fr; /* Adjust ratio here */
+    gap: 3.5rem;
+  }
+}
+
+/* Photo Styling */
+.hero-image-wrapper {
+  width: 100%;
+}
+
+.hero-photo {
+  width: 100%;
+  display: block;
+  border-radius: 12px; /* Soft rounded corners like the image */
+  object-fit: cover;
+  /* Optional: Add a subtle shadow to pop like the reference */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+  aspect-ratio: 3/4; /* Ensures it stays a nice portrait rectangle */
+}
+
+/* Text Content Styling */
+.hero-content {
+  padding-top: 0.5rem;
+}
+
+/* The big red name inside the body */
+.main-name {
+  font-family: "Lora", serif;
+  font-size: 2.8rem;
+  line-height: 1.1;
+  color: var(--accent); /* The Maroon color */
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.main-title {
+  font-size: 1.3rem;
+  color: var(--text-light);
+  font-weight: 400;
+  margin-bottom: 2rem;
+}
+
+/* Body Text Paragraphs */
+.bio-text p {
+  margin-bottom: 1.2rem;
+  color: #2c2c2c;
+  font-size: 1.05rem;
+}
+
+/* Links inside the bio text - mimicking the reference */
+.bio-text a {
+  color: var(--accent);
+  font-weight: 600; /* Bold links */
+  text-decoration: none;
+}
+
+.bio-text a:hover {
+  text-decoration: underline;
+  color: var(--accent-hover);
+}
+
+/* Contact Block */
+.contact-block {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.social-links a {
+  color: var(--text-main);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  margin-right: 0.5rem;
+  transition: all 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ==== Secondary Sections ============================================= */
+
+.section-heading {
+  font-family: "Lora", serif;
+  font-size: 1.4rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
 }
 
 .section-underline {
-  display: inline-block;
-  width: 40px;
-  height: 2px;
-  border-radius: 999px;
-  background-color: var(--accent-soft);
-  margin-bottom: 0.9rem;
-}
-
-/* Section labels and text */
-.section-label {
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  margin-bottom: 0.3rem;
-}
-
-p {
-  margin-bottom: 0.85rem;
+  width: 50px;
+  height: 3px;
+  background-color: var(--accent); /* Red underline */
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
 }
 
 ul {
-  margin-left: 1.2rem;
-  margin-bottom: 0.7rem;
+  margin-left: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 li {
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.5rem;
 }
 
-.compact-list {
-  margin-top: 0.2rem;
-  margin-bottom: 0;
-}
-
-/* ==== Profile layout: photo + contact on left, text on right ========= */
-
-.profile {
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.7fr);
-  column-gap: 2rem;
-  align-items: flex-start;
-  margin-bottom: 2.2rem;
-}
-
-.profile-left {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.photo-wrapper {
-  max-width: 220px;
-}
-
-.profile-photo {
-  width: 100%;
-  display: block;
-  border-radius: 4px;
-  border: 1px solid var(--border-subtle);
-  object-fit: cover;
-}
-
-/* If you have no photo yet, the border will still define the space */
-.profile-photo[src=""] {
-  background-color: #f3f4f8;
-}
-
-.profile-contact h2 {
-  margin-bottom: 0.3rem;
-}
-
-.profile-right h2 {
-  margin-top: 0.3rem;
-}
-
-/* Stack columns on small screens */
-@media (max-width: 768px) {
-  .profile {
-    grid-template-columns: minmax(0, 1fr);
-    row-gap: 1.8rem;
-  }
-  .photo-wrapper {
-    max-width: 240px;
-  }
-}
-
-/* ==== Generic layout on other pages ================================== */
-
-/* Research / teaching entries as simple stacked text blocks. */
-article {
-  margin-bottom: 1.2rem;
-  padding: 0;
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
-}
-
-article h3 {
-  font-family: "Lora", "Georgia", "Times New Roman", serif;
-  font-size: 1.03rem;
-  margin-bottom: 0.2rem;
-}
-
-.meta {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  margin-bottom: 0.4rem;
-}
-
-.badge {
-  display: inline-block;
-  font-size: 0.75rem;
-  padding: 0.12rem 0.55rem;
-  border-radius: 999px;
-  background-color: var(--accent-soft);
-  color: var(--accent);
-  margin-bottom: 0.4rem;
-}
-
-/* ==== Links =========================================================== */
-
-a {
-  color: var(--accent);
-}
-
-a:hover {
-  color: #163a63;
-}
-
-/* ==== Footer ========================================================== */
+/* ==== Footer ========================================================= */
 
 footer {
   border-top: 1px solid var(--border-subtle);
-  padding: 1rem 0;
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  background-color: var(--bg-alt);
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  text-align: center;
 }
