@@ -1,14 +1,71 @@
-<main class="container">
-  <section>
-    <h2>Teaching</h2>
-    <div class="section-underline"></div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teaching | Atish Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <h3>Teaching assistantships</h3>
-    <ul>
-      <li><em>Undergraduate Microeconomics</em>, Dr. Souvik Dutta, Monsoon 2021, Monsoon 2022/li>
-      <li><em>Undergraduate Macroeconomics</em>, Dr. Kiriti Kanjilal, Winter 2022</li>
-      <li><em>Behavioural Economics</em>, Dr. Kiriti Kanjilal, Monsoon 2023, Monsoon 2024</li>
-      <li><em>Money and Banking</em>, Dr. Kiriti Kanjilal, Winter 2023, Winter 2024</li>
-    </ul>
-  </section>
-</main>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/style.css?v=10">
+</head>
+
+<body class="bg-soft">
+
+  <header>
+    <div class="container">
+      <div class="site-header-top">
+        <div>
+          <span class="header-name">Atish Kumar</span>
+        </div>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="research.html">Research</a>
+          <a href="teaching.html" class="active">Teaching</a> <a href="cv.html">CV</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="research-section">
+      <h2 class="section-heading">Teaching</h2>
+      <div class="section-underline"></div>
+
+      <article class="paper-card">
+        <h3 class="paper-title" style="margin-bottom: 1.2rem;">Teaching Assistantships</h3>
+        
+        <ul style="margin-left: 1.5rem; line-height: 1.8; color: #333;">
+          <li>
+            <strong>Undergraduate Microeconomics</strong>, Dr. Souvik Dutta (Monsoon 2021, Monsoon 2022)
+          </li>
+          <li>
+            <strong>Undergraduate Macroeconomics</strong>, Dr. Kiriti Kanjilal (Winter 2022, Winter 2022)
+          </li>
+          <li>
+            <strong>Behavioural Economics</strong>, Dr. Kiriti Kanjilal (Monsoon 2023, Monsoon 2024)
+          </li>
+          <li>
+            <strong>Money and Banking</strong>, Dr. Kiriti Kanjilal (Winter 2023, Winter 2024)
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; <span id="year"></span> Atish Kumar</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
